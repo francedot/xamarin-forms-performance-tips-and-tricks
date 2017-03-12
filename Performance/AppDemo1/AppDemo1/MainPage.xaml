@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppDemo1"
+             x:Class="AppDemo1.MainPage">
+
+    <!--16 Campioni (SetValueActual in BindableObject)
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 16         | 1.9422    ms | 0.1214  ms
+        SetValueActual                           | 162        | 46.4051   ms | 0.2865  ms
+        
+        32 Campioni
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 32         | 2.1635    ms | 0.0676  ms
+        SetValueActual                           | 306        | 45.9565   ms | 0.1502  ms
+        -->
+    <!--<StackLayout>
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+    </StackLayout>-->
+
+    <!-- 16 Campioni
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 16         | 1.3154    ms | 0.0822  ms
+        SetValueActual                           | 210        | 71.6531   ms | 0.3412  ms
+    
+        32 Campioni
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 32         | 2.8597    ms | 0.0894  ms
+        SetValueActual                           | 402        | 73.5065   ms | 0.1829  ms
+    -->
+    <StackLayout>
+        <Label Text="{Binding Value1}"  />
+        <Label Text="{Binding Value2}"  />
+        <Label Text="{Binding Value3}"  />
+        <Label Text="{Binding Value4}"  />
+        <Label Text="{Binding Value5}"  />
+        <Label Text="{Binding Value6}"  />
+        <Label Text="{Binding Value7}"  />
+        <Label Text="{Binding Value8}"  />
+        <Label Text="{Binding Value9}"  />
+        <Label Text="{Binding Value10}"  />
+        <Label Text="{Binding Value11}"  />
+        <Label Text="{Binding Value12}"  />
+        <Label Text="{Binding Value13}"  />
+        <Label Text="{Binding Value14}"  />
+        <Label Text="{Binding Value15}"  />
+        <Label Text="{Binding Value16}"  />
+        <Label Text="{Binding Value17}"  />
+        <Label Text="{Binding Value18}"  />
+        <Label Text="{Binding Value19}"  />
+        <Label Text="{Binding Value20}"  />
+        <Label Text="{Binding Value21}"  />
+        <Label Text="{Binding Value22}"  />
+        <Label Text="{Binding Value23}"  />
+        <Label Text="{Binding Value24}"  />
+        <Label Text="{Binding Value25}"  />
+        <Label Text="{Binding Value26}"  />
+        <Label Text="{Binding Value27}"  />
+        <Label Text="{Binding Value28}"  />
+        <Label Text="{Binding Value29}"  />
+        <Label Text="{Binding Value30}"  />
+        <Label Text="{Binding Value31}"  />
+        <Label Text="{Binding Value32}"  />
+    </StackLayout>
+
+</ContentPage>
