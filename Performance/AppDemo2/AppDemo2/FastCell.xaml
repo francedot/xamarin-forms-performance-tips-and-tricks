@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="AppDemo2.FastCell">
+  <ViewCell.View>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="148"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="PosterImage" HeightRequest="220" Aspect="Fill"/>
+            <Grid Grid.Column="1" Padding="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout>
+                    <Label x:Name="TitleLabel" FontSize="20" FontAttributes="Bold"/>
+                    <Label x:Name="DirectorLabel" FontSize="16" FontAttributes="Italic"/>
+                </StackLayout>
+                <Grid Grid.Row="1" VerticalOptions="End" Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="CountryLabel" />
+                        <Label Text="-" />
+                        <Label x:Name="YearLabel" />
+                    </StackLayout>
+                    <Label x:Name="RatingLabel"
+                           Grid.Column="1"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End" 
+                           Margin="0,0,4,0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
