@@ -14,7 +14,18 @@ namespace AppDemo2
 
         private readonly MoviesLoader _moviesLoader = new MoviesLoader();
 
+        //private IEnumerable<Movie> _movies;
         private IList<Movie> _movies;
+
+        //public IEnumerable<Movie> Movies
+        //{
+        //    get { return _movies; }
+        //    set
+        //    {
+        //        _movies = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         public IList<Movie> Movies
         {
@@ -25,6 +36,8 @@ namespace AppDemo2
                 OnPropertyChanged();
             }
         }
+
+
 
         public async Task OnAppearingAsync()
         {

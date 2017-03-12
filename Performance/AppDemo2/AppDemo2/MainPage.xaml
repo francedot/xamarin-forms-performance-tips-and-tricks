@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:AppDemo2"
              x:Class="AppDemo2.MainPage">
 
-    <ListView CachingStrategy="RetainElement"
+    <!--<ListView CachingStrategy="RetainElement"
               ItemsSource="{Binding Movies}"
               RowHeight="220">
         <ListView.ItemTemplate>
@@ -55,7 +55,7 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
     
     <!--<ListView CachingStrategy="RecycleElement"
               ItemsSource="{Binding Movies}"
@@ -119,5 +119,60 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>-->
+
+    <!--Break virtualization and on UWP block scrolling-->
+    <!--<ScrollView>
+        <StackLayout>
+            <Label Text="List of Movies"
+                   TextColor="Teal"
+                   FontSize="22"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <ListView CachingStrategy="RecycleElement"
+                      ItemsSource="{Binding Movies}"
+                      RowHeight="220">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:FastCell/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Footer"
+                   TextColor="Teal"
+                   FontSize="22"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </ScrollView>-->
+
+    <ListView CachingStrategy="RecycleElement"
+              ItemsSource="{Binding Movies}"
+              RowHeight="220"
+              Header="List of Movies"
+              Footer="Footer">
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <Label Text="{Binding .}"
+                   TextColor="Teal"
+                   FontSize="22"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+        <ListView.FooterTemplate>
+            <DataTemplate>
+                <Label Text="{Binding .}"
+                       TextColor="Teal"
+                       FontSize="22"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+            </DataTemplate>
+        </ListView.FooterTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <local:FastCell/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>

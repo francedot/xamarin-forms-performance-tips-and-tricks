@@ -11,6 +11,7 @@ namespace AppDemo2
     {
         private const string FileName = "movies.json";
 
+        //public async Task<IEnumerable<Movie>> LoadMoviesAsync()
         public async Task<IList<Movie>> LoadMoviesAsync()
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
