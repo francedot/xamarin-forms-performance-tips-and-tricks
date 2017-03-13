@@ -12,8 +12,7 @@ namespace AppDemo4
         public App()
         {
             InitializeComponent();
-
-            MainPage = new AppDemo4.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

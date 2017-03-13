@@ -1,11 +1,189 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AppDemo4"
-             x:Class="AppDemo4.MainPage">
+             x:Class="AppDemo4.MainPage"
+             Title="ContentPage"
+             x:Name="ContentPage"
+             ClassId="ContentPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <!--
+        xi = Phase x of Invalidation Cycle
+    -->
+    
+    <!--
+        SCENARIO 1: Grid with auto-sized rows - Static Content
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Grid                | 10        
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 2         
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 1         
+    
+        SCENARIO 2: Grid with auto-sized rows - Dynamic Content (Label2 Text changes)
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 4            3i. Invalidation due to Grid   
+        InvalidateMeasureInternal-Grid                | 11           2i. Invalidation due to Label2
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 3            1i. Invalidation source   
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 2            4. Layout Cycle on Children
+    -->
+    <!--<Grid x:Name="Grid" ClassId="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Label1" ClassId="Label1" Text="Hello Codemotion!"/>
+        <Label Grid.Row="1" x:Name="Label2" ClassId="Label2" Text="Hello Codemotion!"/>
+        <Label Grid.Row="2" x:Name="Label3" ClassId="Label3" Text="Hello Codemotion!"/>
+        <Label Grid.Row="3" x:Name="Label4" ClassId="Label4" Text="Hello Codemotion!"/>
+    </Grid>-->
+    
+    <!--
+        SCENARIO 3: Grid with fixed sized rows - Static Content
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Grid                | 10        
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 2         
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 1         
+    
+        SCENARIO 4: Grid with fixed sized rows - Dynamic Content (Label2 Text changes)
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Grid                | 10           Grid short-circuit Invalidation Cycle
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 3            1i. Invalidation source
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 1            Layout Cycle not triggered
+    -->
+    <!--<Grid x:Name="Grid" ClassId="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Label1" ClassId="Label1" Text="Hello Codemotion!"/>
+        <Label Grid.Row="1" x:Name="Label2" ClassId="Label2" Text="Hello Codemotion!"/>
+        <Label Grid.Row="2" x:Name="Label3" ClassId="Label3" Text="Hello Codemotion!"/>
+        <Label Grid.Row="3" x:Name="Label4" ClassId="Label4" Text="Hello Codemotion!"/>
+    </Grid>-->
+
+    <!--
+        SCENARIO 5: Grid with proportional sized rows - Static Content
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Grid                | 10        
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 2         
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 1
+    
+        SCENARIO 6: Grid with proportional sized rows - Dynamic Content (Label2 Text changes)
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Grid                | 10           Grid short-circuit Invalidation Cycle
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 3            1i. Invalidation source
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        UpdateChildrenLayout-ContentPage              | 1            Layout Cycle not triggered
+    -->
+    <!--<Grid x:Name="Grid" ClassId="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Label1" ClassId="Label1" Text="Hello Codemotion!"/>
+        <Label Grid.Row="1" x:Name="Label2" ClassId="Label2" Text="Hello Codemotion!"/>
+        <Label Grid.Row="2" x:Name="Label3" ClassId="Label3" Text="Hello Codemotion!"/>
+        <Label Grid.Row="3" x:Name="Label4" ClassId="Label4" Text="Hello Codemotion!"/>
+    </Grid>-->
+
+    <!--
+        SCENARIO 7: StackLayout - Static Content
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 2         
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        InvalidateMeasureInternal-StackLayout         | 6         
+        UpdateChildrenLayout-ContentPage              | 1     
+    
+        SCENARIO 8: StackLayout - Dynamic Content (Label2 Text changes)
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 4            3i. Invalidation due to StackLayout
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 3            1i. Invalidation source
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        InvalidateMeasureInternal-StackLayout         | 7            2i. Invalidation due to Label2
+        UpdateChildrenLayout-ContentPage              | 2            4. Layout Cycle on Children
+    -->
+    <!--<StackLayout x:Name="StackLayout" ClassId="StackLayout">
+        <Label x:Name="Label1" ClassId="Label1" Text="Hello Codemotion!"/>
+        <Label x:Name="Label2" ClassId="Label2" Text="Hello Codemotion!"/>
+        <Label x:Name="Label3" ClassId="Label3" Text="Hello Codemotion!"/>
+        <Label x:Name="Label4" ClassId="Label4" Text="Hello Codemotion!"/>
+    </StackLayout>-->
+
+    <!--
+        SCENARIO 9: RelativeLayout - Static Content
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 3         
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 2         
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        InvalidateMeasureInternal-RelativeLayout      | 8         
+        UpdateChildrenLayout-ContentPage              | 1    
+    
+        SCENARIO 10: RelativeLayout - Dynamic Content (Label2 Text changes)
+        ID                                            | Call Count
+        InvalidateMeasureInternal-ContentPage         | 4            3i. Invalidation due to RelativeLayout
+        InvalidateMeasureInternal-Label1              | 2         
+        InvalidateMeasureInternal-Label2              | 3            1i. Invalidation source
+        InvalidateMeasureInternal-Label3              | 2         
+        InvalidateMeasureInternal-Label4              | 2         
+        InvalidateMeasureInternal-RelativeLayout      | 9            2i. Invalidation due to Label2
+        UpdateChildrenLayout-ContentPage              | 2            4. Layout Cycle on Children
+    -->
+    
+    <RelativeLayout ClassId="RelativeLayout">
+        <Label x:Name="Label1" ClassId="Label1" Text="Hello Codemotion!" />
+        <Label x:Name="Label2" ClassId="Label2" Text="Hello Codemotion!"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+                                        Property=Y, 
+                                        ElementName=Label1,
+                                        Constant=20}" />
+        <Label x:Name="Label3" ClassId="Label3" Text="Hello Codemotion!"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+                                        Property=Y, 
+                                        ElementName=Label2,
+                                        Constant=20}" />
+        <Label x:Name="Label4" ClassId="Label4" Text="Hello Codemotion!"
+               RelativeLayout.YConstraint=
+                 "{ConstraintExpression Type=RelativeToView,
+                                        Property=Y, 
+                                        ElementName=Label3,
+                                        Constant=20}" />
+    </RelativeLayout>
+    
+    <!--TODO AbsoluteLayout-->
 
 </ContentPage>
