@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="AppDemo5.Controls.DayOfWeekReminderView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="View">
+    <StackLayout Orientation="Horizontal">
+        <Switch x:Name="RemainderSwitch"
+                IsToggled="{Binding IsReminderOn, Mode=TwoWay}"/>
+        <Label x:Name="DayOfWeekLabel"
+               Margin="0,4,0,0"
+               Text="{Binding DayOfWeek}"
+               VerticalTextAlignment="Center"
+               WidthRequest="120"/>
+        <TimePicker x:Name="DayReminderTimeSpan"
+                    Margin="4,0,0,0"
+                    BindingContext="{x:Reference View}"
+                    IsEnabled="{Binding IsReminderOn}" />
+    </StackLayout>
+</ContentView>

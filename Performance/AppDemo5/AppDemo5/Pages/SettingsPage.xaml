@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:AppDemo5.Controls;assembly=AppDemo5"
+             x:Class="AppDemo5.Pages.SettingsPage"
+             Title="SettingsPage"
+             x:Name="Page">
+    <ScrollView>
+        <Grid Padding="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout x:Name="RemindersStack">
+                <StackLayout.Spacing>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="16" />
+                </StackLayout.Spacing>
+
+                <Label FontAttributes="Bold"
+                       FontSize="22"
+                       Text="Set the Reminder Time:" />
+
+                <StackLayout Orientation="Horizontal" Margin="0,4,0,0">
+                    <Label Text="Default Reminder Time:" VerticalTextAlignment="Center" WidthRequest="207"/>
+                    <TimePicker x:Name="StandardDayReminderTimeSpan" />
+                </StackLayout>
+
+                <StackLayout x:Name="RemindersStackLayout" Margin="0,8,0,0">
+                    <controls:DayOfWeekReminderView DayOfWeek="Monday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Tuesday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Wednesday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Thursday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Friday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Saturday"
+                                            IsReminderOn="True" />
+                    <controls:DayOfWeekReminderView DayOfWeek="Sunday"
+                                            IsReminderOn="True" />
+                </StackLayout>
+
+                <Label FontAttributes="Bold"
+                       Margin="0,32,0,0"
+                       FontSize="22"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       Text="Hi! I'm a Settings Page built with Forms in a Native project!"/>
+                
+            </StackLayout>
+
+            <Button Grid.Row="1"
+                    Margin="0,16,0,0"
+                    BindingContext="{x:Reference Page}"
+                    Command="{Binding ResetSettingsCommand}"
+                    Text="Reset Reminders"
+                    TextColor="Black"
+                    VerticalOptions="End"/>
+
+        </Grid>
+
+    </ScrollView>
+</ContentPage>
