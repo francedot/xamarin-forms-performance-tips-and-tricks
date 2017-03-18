@@ -4,62 +4,66 @@
              xmlns:local="clr-namespace:AppDemo1"
              x:Class="AppDemo1.MainPage">
 
-    <!--16 Campioni (SetValueActual in BindableObject)
+    <!--
+        16 Labels (SetValueActual in BindableObject)
         ID                                       | Call Count | Total Time   | Avg Time  
         OnTextPropertyChanged                    | 16         | 1.9422    ms | 0.1214  ms
         SetValueActual                           | 162        | 46.4051   ms | 0.2865  ms
         
-        32 Campioni
+        32 Labels
         ID                                       | Call Count | Total Time   | Avg Time  
-        OnTextPropertyChanged                    | 32         | 2.1635    ms | 0.0676  ms
-        SetValueActual                           | 306        | 45.9565   ms | 0.1502  ms
-        -->
-    <!--<StackLayout>
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-        <Label Text="Hello Codemotion!"  />
-    </StackLayout>-->
-
-    <!-- 16 Campioni
-        ID                                       | Call Count | Total Time   | Avg Time  
-        OnTextPropertyChanged                    | 16         | 1.3154    ms | 0.0822  ms
-        SetValueActual                           | 210        | 71.6531   ms | 0.3412  ms
-    
-        32 Campioni
-        ID                                       | Call Count | Total Time   | Avg Time  
-        OnTextPropertyChanged                    | 32         | 2.8597    ms | 0.0894  ms
-        SetValueActual                           | 402        | 73.5065   ms | 0.1829  ms
+        OnTextPropertyChanged                    | 32         | 2.3536    ms | 0.0736  ms
+        SetValueActual                           | 306        | 50.9973   ms | 0.1667  ms
     -->
     <StackLayout>
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+        <Label Text="Hello Codemotion!"  />
+    </StackLayout>
+
+    <!--
+        16 Labels
+        ID                                       | Call Count | Total Time   | Avg Time  
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 16         | 3.6955    ms | 0.2310  ms
+        SetValueActual                           | 194        | 60.6401   ms | 0.3126  ms
+    
+        32 Labels
+        ID                                       | Call Count | Total Time   | Avg Time  
+        OnTextPropertyChanged                    | 32         | 4.7921    ms | 0.1498  ms
+        SetValueActual                           | 370        | 72.0445   ms | 0.1947  ms
+    -->
+    
+    <!--<StackLayout>
         <Label Text="{Binding Value1}"  />
         <Label Text="{Binding Value2}"  />
         <Label Text="{Binding Value3}"  />
@@ -92,6 +96,6 @@
         <Label Text="{Binding Value30}"  />
         <Label Text="{Binding Value31}"  />
         <Label Text="{Binding Value32}"  />
-    </StackLayout>
+    </StackLayout>-->
 
 </ContentPage>

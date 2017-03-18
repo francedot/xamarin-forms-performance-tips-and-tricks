@@ -11,38 +11,38 @@ namespace AppDemo1
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        string _value1;
-        string _value2;
-        string _value3;
-        string _value4;
-        string _value5;
-        string _value6;
-        string _value7;
-        string _value8;
-        string _value9;
-        string _value10;
-        string _value11;
-        string _value12;
-        string _value13;
-        string _value14;
-        string _value15;
-        string _value16;
-        string _value17;
-        string _value18;
-        string _value19;
-        string _value20;
-        string _value21;
-        string _value22;
-        string _value23;
-        string _value24;
-        string _value25;
-        string _value26;
-        string _value27;
-        string _value28;
-        string _value29;
-        string _value30;
-        string _value31;
-        string _value32;
+        string _value1 = "Hello Codemotion";
+        string _value2 = "Hello Codemotion";
+        string _value3 = "Hello Codemotion";
+        string _value4 = "Hello Codemotion";
+        string _value5 = "Hello Codemotion";
+        string _value6 = "Hello Codemotion";
+        string _value7 = "Hello Codemotion";
+        string _value8 = "Hello Codemotion";
+        string _value9 = "Hello Codemotion";
+        string _value10 = "Hello Codemotion";
+        string _value11 = "Hello Codemotion";
+        string _value12 = "Hello Codemotion";
+        string _value13 = "Hello Codemotion";
+        string _value14 = "Hello Codemotion";
+        string _value15 = "Hello Codemotion";
+        string _value16 = "Hello Codemotion";
+        string _value17 = "Hello Codemotion";
+        string _value18 = "Hello Codemotion";
+        string _value19 = "Hello Codemotion";
+        string _value20 = "Hello Codemotion";
+        string _value21 = "Hello Codemotion";
+        string _value22 = "Hello Codemotion";
+        string _value23 = "Hello Codemotion";
+        string _value24 = "Hello Codemotion";
+        string _value25 = "Hello Codemotion";
+        string _value26 = "Hello Codemotion";
+        string _value27 = "Hello Codemotion";
+        string _value28 = "Hello Codemotion";
+        string _value29 = "Hello Codemotion";
+        string _value30 = "Hello Codemotion";
+        string _value31 = "Hello Codemotion";
+        string _value32 = "Hello Codemotion";
 
         public string Value1
         {
@@ -371,39 +371,6 @@ namespace AppDemo1
 
         public async Task OnAppearingAsync()
         {
-            Value1 = "Hello Codemotion";
-            Value2 = "Hello Codemotion";
-            Value3 = "Hello Codemotion";
-            Value4 = "Hello Codemotion";
-            Value5 = "Hello Codemotion";
-            Value6 = "Hello Codemotion";
-            Value7 = "Hello Codemotion";
-            Value8 = "Hello Codemotion";
-            Value9 = "Hello Codemotion";
-            Value10 = "Hello Codemotion";
-            Value11 = "Hello Codemotion";
-            Value12 = "Hello Codemotion";
-            Value13 = "Hello Codemotion";
-            Value14 = "Hello Codemotion";
-            Value15 = "Hello Codemotion";
-            Value16 = "Hello Codemotion";
-            Value17 = "Hello Codemotion";
-            Value18 = "Hello Codemotion";
-            Value19 = "Hello Codemotion";
-            Value20 = "Hello Codemotion";
-            Value21 = "Hello Codemotion";
-            Value22 = "Hello Codemotion";
-            Value23 = "Hello Codemotion";
-            Value24 = "Hello Codemotion";
-            Value25 = "Hello Codemotion";
-            Value26 = "Hello Codemotion";
-            Value27 = "Hello Codemotion";
-            Value28 = "Hello Codemotion";
-            Value29 = "Hello Codemotion";
-            Value30 = "Hello Codemotion";
-            Value31 = "Hello Codemotion";
-            Value32 = "Hello Codemotion";
-
             await Task.Delay(TimeSpan.FromSeconds(3)); 
             FormsProfiler.DumpStats();
         }
