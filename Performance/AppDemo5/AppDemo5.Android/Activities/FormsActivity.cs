@@ -10,6 +10,8 @@ namespace AppDemo5.Droid
     [Activity(Label = "@string/app_name", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class FormsActivity : FormsAppCompatActivity
     {
+        public static bool IsFormsInitialized;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -18,7 +20,12 @@ namespace AppDemo5.Droid
             var fullName = typeof(FormsApp).Namespace + ".Pages." + pageName;
             var pageType = typeof(FormsApp).Assembly.GetType(fullName);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            if (!IsFormsInitialized)
+            {
+                global::Xamarin.Forms.Forms.Init(this, bundle);
+                IsFormsInitialized = true;
+            }
+
             LoadApplication(new FormsApp(pageType));
         }
     }
